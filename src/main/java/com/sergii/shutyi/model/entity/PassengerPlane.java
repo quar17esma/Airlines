@@ -7,4 +7,9 @@ public class PassengerPlane extends AbstractPlane {
     public int getCarryingCapacity() {
         return CARRYING_CAPACITY;
     }
+
+    @Override
+    public void setCarryingCapacity(int carryingCapacity) {
+        throw new UnsupportedOperationException();
+    }
 }

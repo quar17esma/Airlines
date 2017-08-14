@@ -7,4 +7,10 @@ public class CargoPlane extends AbstractPlane {
     public int getPassengerCapacity() {
         return PASSENGER_CAPACITY;
     }
+
+    @Override
+    public void setPassengerCapacity(int passengerCapacity) {
+        throw new UnsupportedOperationException();
+    }
+
 }

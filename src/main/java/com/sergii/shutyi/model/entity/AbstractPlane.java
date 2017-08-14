@@ -60,4 +60,40 @@ public abstract class AbstractPlane implements Aircraft {
     public int getFuelsConsumption() {
         return fuelConsumption;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAircraftModel(String aircraftModel) {
+        this.aircraftModel = aircraftModel;
+    }
+
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    public void setCarryingCapacity(int carryingCapacity) {
+        this.carryingCapacity = carryingCapacity;
+    }
+
+    public void setFlightRange(int flightRange) {
+        this.flightRange = flightRange;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractPlane{" +
+                "id=" + id +
+                ", aircraftModel='" + aircraftModel + '\'' +
+                ", passengerCapacity=" + passengerCapacity +
+                ", carryingCapacity=" + carryingCapacity +
+                ", flightRange=" + flightRange +
+                ", fuelConsumption=" + fuelConsumption +
+                '}' + "\n";
+    }
 }
