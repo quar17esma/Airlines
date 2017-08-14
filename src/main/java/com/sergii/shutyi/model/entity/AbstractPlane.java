@@ -1,6 +1,6 @@
 package com.sergii.shutyi.model.entity;
 
-public class AbstractPlane implements Aircraft {
+public abstract class AbstractPlane implements Aircraft {
     /**
      * ID of the plane
      */
