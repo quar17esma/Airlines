@@ -1,7 +1,6 @@
 package com.sergii.shutyi.controller.command;
 
 import com.sergii.shutyi.controller.command.commands.EmptyCommand;
-import com.sergii.shutyi.controller.manager.MessageManager;
 import javax.servlet.http.HttpServletRequest;
 
 public class ActionFactory {
@@ -21,7 +20,7 @@ public class ActionFactory {
             CommandEnum currentEnum = CommandEnum.valueOf(action.toUpperCase());
             currentCommand = currentEnum.getCurrentCommand();
         } catch (IllegalArgumentException e) {
-            request.setAttribute("wrong action", action + MessageManager.getProperty("message.wrong.action"));
+//            request.setAttribute("wrong action", action + MessageManager.getProperty("message.wrong.action"));
         }
         return currentCommand;
     }
