@@ -1,12 +1,9 @@
 package com.sergii.shutyi.dao;
 
-import com.sergii.shutyi.model.entity.AbstractPlane;
+import com.sergii.shutyi.model.entity.plane.AbstractPlane;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class PlaneDAOTest {
     @Test

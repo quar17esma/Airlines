@@ -1,4 +1,6 @@
-package com.sergii.shutyi.model.entity;
+package com.sergii.shutyi.model.entity.plane;
+
+import com.sergii.shutyi.model.entity.Aircraft;
 
 public abstract class AbstractPlane implements Aircraft {
     /**
