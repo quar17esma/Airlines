@@ -35,10 +35,10 @@
 </head>
 <body>
     <br>
-    <%--<form name="inputNoteForm" action="controller" method="post">--%>
-        <%--<input type="hidden" name="command" value="INPUT_NOTE">--%>
-        <%--<input class="button" type="submit" value="Add new note">--%>
-    <%--</form>--%>
+    <form name="sortByFuelConsumptionForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SHOW_SORTED_BY_FUEL_CONSUMPTION">
+        <input class="button" type="submit" value="Sort by fuel consumption">
+    </form>
     <br/>
 
     <jsp:useBean id="planes" scope="request" type="java.util.List"/>

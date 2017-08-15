@@ -1,8 +1,10 @@
 package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.dao.PlaneDAO;
+import com.sergii.shutyi.model.SortPlane;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,7 +35,9 @@ public class Airline {
      * Method sorts list of aircraft by flight range in ascend order
      * @param aircraftList list of aircraft to sort
      */
-    public void sortByFlightRange(ArrayList<Aircraft> aircraftList){
+    public List<Aircraft> sortByFlightRange(){
+        Collections.sort(aircraftList, SortPlane.SORT_BY_FUEL_CONSUMPTION);
+        return aircraftList;
     }
 
     /**
