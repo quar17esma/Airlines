@@ -6,7 +6,7 @@ import com.sergii.shutyi.controller.command.commands.ShowAllCommand;
  * Possible Commands.
  */
 public enum CommandEnum {
-    SHOW_NOTEBOOK{
+    SHOW_AIRLINE {
         {
             this.command = new ShowAllCommand();
         }
@@ -14,7 +14,7 @@ public enum CommandEnum {
 
     ActionCommand command;
 
-    public ActionCommand getCurrentCommand(){
+    public ActionCommand getCurrentCommand() {
         return command;
     }
 }
