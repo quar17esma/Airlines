@@ -6,7 +6,7 @@ public interface Aircraft {
     int getPassengerCapacity();
     int getCarryingCapacity();
     int getFlightRange();
-    int getFuelsConsumption();
+    int getFuelConsumption();
 
 
 }

@@ -59,7 +59,7 @@ public abstract class AbstractPlane implements Aircraft {
     }
 
     @Override
-    public int getFuelsConsumption() {
+    public int getFuelConsumption() {
         return fuelConsumption;
     }
 
