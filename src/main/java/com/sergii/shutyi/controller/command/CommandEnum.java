@@ -1,6 +1,6 @@
 package com.sergii.shutyi.controller.command;
 
-import com.sergii.shutyi.controller.command.commands.ShowCommand;
+import com.sergii.shutyi.controller.command.commands.ShowAllCommand;
 
 /**
  * Possible Commands.
@@ -8,7 +8,7 @@ import com.sergii.shutyi.controller.command.commands.ShowCommand;
 public enum CommandEnum {
     SHOW_NOTEBOOK{
         {
-            this.command = new ShowCommand();
+            this.command = new ShowAllCommand();
         }
     };
 
