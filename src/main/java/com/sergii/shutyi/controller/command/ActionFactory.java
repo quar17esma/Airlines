@@ -20,7 +20,7 @@ public class ActionFactory {
             CommandEnum currentEnum = CommandEnum.valueOf(action.toUpperCase());
             currentCommand = currentEnum.getCurrentCommand();
         } catch (IllegalArgumentException e) {
-//            request.setAttribute("wrong action", action + MessageManager.getProperty("message.wrong.action"));
+//            request.setAttribute("wrong action", action + LabelManager.getProperty("message.wrong.action"));
         }
         return currentCommand;
     }
