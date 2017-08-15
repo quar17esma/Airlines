@@ -1,6 +1,9 @@
 package com.sergii.shutyi.model.entity;
 
+import com.sergii.shutyi.dao.PlaneDAO;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents Airline entity.
@@ -9,7 +12,7 @@ public class Airline {
     /**
      * List of Aircraft of the Airline.
      */
-    private ArrayList<Aircraft> aircraftList = new ArrayList<>();
+    private List<Aircraft> aircraftList;
 
     /**
      * Passenger capacity of the Airline
@@ -20,6 +23,11 @@ public class Airline {
      * Carrying capacity of the Airline
      */
     private int carryingCapacity;
+
+    public Airline() {
+        PlaneDAO planeDAO = new PlaneDAO();
+        this.aircraftList = planeDAO.findAll();
+    }
 
     /**
      * Method sorts list of aircraft by flight range in ascend order
@@ -39,7 +47,7 @@ public class Airline {
     }
 
     //getter and setter
-    public ArrayList<Aircraft> getAircraftList() {
+    public List<Aircraft> getAircraftList() {
         return aircraftList;
     }
 
