@@ -1,6 +1,7 @@
 package com.sergii.shutyi.controller.command;
 
 import com.sergii.shutyi.controller.command.commands.ShowAllCommand;
+import com.sergii.shutyi.controller.command.commands.ShowSortedByFlightRange;
 import com.sergii.shutyi.controller.command.commands.ShowSortedByFuelConsumption;
 
 /**
@@ -12,9 +13,14 @@ public enum CommandEnum {
             this.command = new ShowAllCommand();
         }
     },
-    SHOW_SORTED_BY_FUEL_CONSUMPTION{
+    SHOW_SORTED_BY_FUEL_CONSUMPTION {
         {
             this.command = new ShowSortedByFuelConsumption();
+        }
+    },
+    SHOW_SORTED_BY_FLIGHT_RANGE {
+        {
+            this.command = new ShowSortedByFlightRange();
         }
     };
 

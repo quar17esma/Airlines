@@ -20,7 +20,7 @@
         }
 
         .button {
-            width: 100px;
+            width: 200px;
         }
 
         .main {
@@ -34,10 +34,21 @@
     <title><fmt:message key="show.airline"/></title>
 </head>
 <body>
-    <br>
-    <form name="sortByFuelConsumptionForm" action="controller" method="post">
+    <br/>
+    <form name="sortedByFuelConsumptionForm" action="controller" method="post">
         <input type="hidden" name="command" value="SHOW_SORTED_BY_FUEL_CONSUMPTION">
         <input class="button" type="submit" value="Sort by fuel consumption">
+    </form>
+    <br/>
+    <form name="sortedByFlightRangeForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SHOW_SORTED_BY_FLIGHT_RANGE">
+        <input class="button" type="submit" value="Sort by flight range">
+    </form>
+    <br/>
+
+    <form name="findByFuelConsumptionForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SHOW_FIND_BY_FUEL_CONSUMPTION">
+        <input class="button" type="submit" value="Sort by flight range">
     </form>
     <br/>
 

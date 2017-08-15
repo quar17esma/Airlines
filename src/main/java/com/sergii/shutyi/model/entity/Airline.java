@@ -35,8 +35,17 @@ public class Airline {
      * Method sorts list of aircraft by flight range in ascend order
      * @param aircraftList list of aircraft to sort
      */
-    public List<Aircraft> sortByFlightRange(){
+    public List<Aircraft> sortByFuelConsumption(){
         Collections.sort(aircraftList, SortPlane.SORT_BY_FUEL_CONSUMPTION);
+        return aircraftList;
+    }
+
+    /**
+     * Method sorts list of aircraft by flight range in ascend order
+     * @param aircraftList list of aircraft to sort
+     */
+    public List<Aircraft> sortByFlightRange(){
+        Collections.sort(aircraftList, SortPlane.SORT_BY_FLIGHT_RANGE);
         return aircraftList;
     }
 
