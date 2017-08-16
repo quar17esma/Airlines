@@ -16,7 +16,7 @@ public class ShowSortedByFlightRange implements ActionCommand {
         List<Aircraft> planes = Controller.getModel().getAirline().sortByFlightRange();
         request.setAttribute("planes", planes);
 
-        page = ConfigurationManager.getProperty("path.page.show.airline");
+        page = ConfigurationManager.getProperty("path.page.show.airline.fleet");
 
         return page;
     }
