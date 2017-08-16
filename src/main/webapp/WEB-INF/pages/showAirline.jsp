@@ -49,9 +49,9 @@
     <form name="findByFuelConsumptionForm" action="controller" method="post">
         <input type="hidden" name="command" value="SHOW_FIND_BY_FUEL_CONSUMPTION">
         Min consumption:
-        <input type="number" name="min_fuel_consumption" min="0" max="1700" step="50" value="0">
+        <input type="number" name="min_fuel_consumption" min="0" max="3000" step="50" value="0">
         Max consumption:
-        <input type="number" name="min_fuel_consumption" min="0" max="1700" step="50" value="1700">
+        <input type="number" name="max_fuel_consumption" min="0" max="3000" step="50" value="3000">
         <input class="button" type="submit" value="Find by flight range">
     </form>
     <br/>

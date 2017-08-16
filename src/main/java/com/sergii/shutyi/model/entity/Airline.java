@@ -55,8 +55,32 @@ public class Airline {
      * @param maxFuelConsumption maximal fuel consumption
      * @return list of aircraft with fuel consumption in range
      */
-    public ArrayList<Aircraft> findByFuelConsumptionRange(int minFuelConsumption, int maxFuelConsumption){
-        return null;
+    public List<Aircraft> findByFuelConsumptionRange(int minFuelConsumption, int maxFuelConsumption){
+        List<Aircraft> aircraftInRangeList = new ArrayList<>();
+        for (Aircraft aircraft:aircraftList) {
+            if (isBetweenFuelConsumption(aircraft.getFuelConsumption(), minFuelConsumption, maxFuelConsumption)) {
+                aircraftInRangeList.add(aircraft);
+            }
+        }
+
+        if (aircraftInRangeList.isEmpty()) {
+            //Exception not found in range
+        }
+
+        return aircraftInRangeList;
+    }
+
+    private boolean isBetweenFuelConsumption(int actual, int min, int max) {
+        if (actual <= 0 || min < 0 || max <= 0) {
+            throw new IllegalArgumentException("Fuel consumption can not be negative or equals zero");
+        } else if (min > max) {
+            throw new IllegalArgumentException("min can not be greater than max");
+        } else {
+            if (actual > min && actual < max) {
+                return true;
+            }
+        }
+        return false;
     }
 
     //getter and setter
