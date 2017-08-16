@@ -1,10 +1,5 @@
 package com.sergii.shutyi.model.entity.plane;
 
-import com.sergii.shutyi.model.entity.plane.AbstractPlane;
-import com.sergii.shutyi.model.entity.plane.CargoPlane;
-import com.sergii.shutyi.model.entity.plane.PassengerPlane;
-
-import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
@@ -33,14 +28,6 @@ public class PlaneFactory {
         plane.setFlightRange(resultSet.getInt("flight_range"));
         plane.setFuelConsumption(resultSet.getInt("fuel_consumption"));
 
-
         return plane;
-    }
-
-    public void blabla(ResultSet resultSet) throws SQLException {
-        while (resultSet.next()) {
-            String my = resultSet.getString("type");
-            System.out.println(my);
-        }
     }
 }
