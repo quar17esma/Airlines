@@ -1,7 +1,7 @@
 package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.dao.PlaneDAO;
-import com.sergii.shutyi.model.SortPlane;
+import com.sergii.shutyi.model.util.SortPlane;
 
 import java.util.ArrayList;
 import java.util.Collections;

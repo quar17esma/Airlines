@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model;
+package com.sergii.shutyi.model.util;
 
 import com.sergii.shutyi.model.entity.Aircraft;
 
