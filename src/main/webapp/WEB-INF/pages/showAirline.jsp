@@ -29,11 +29,18 @@
             justify-content: center;
             height: 100%;
         }
+        .header {
+            font-size: x-large;
+        }
     </style>
 
     <title><fmt:message key="show.airline"/></title>
 </head>
 <body>
+    <br/>
+    <div class="header">
+        <h1><fmt:message key="airline.fleet"/></h1>
+    </div>
     <br/>
     <form name="sortedByFuelConsumptionForm" action="controller" method="post">
         <input type="hidden" name="command" value="SHOW_SORTED_BY_FUEL_CONSUMPTION">
