@@ -2,6 +2,8 @@ package com.sergii.shutyi.model.entity.plane;
 
 import com.sergii.shutyi.model.entity.Aircraft;
 
+import java.util.Objects;
+
 public abstract class AbstractPlane implements Aircraft {
     /**
      * ID of the plane
@@ -64,27 +66,51 @@ public abstract class AbstractPlane implements Aircraft {
     }
 
     public void setId(int id) {
-        this.id = id;
+        if (id > 0) {
+            this.id = id;
+        } else {
+            throw new IllegalArgumentException("id must be greater than 0");
+        }
     }
 
     public void setAircraftModel(String aircraftModel) {
-        this.aircraftModel = aircraftModel;
+        if (!Objects.requireNonNull(aircraftModel).isEmpty()) {
+            this.aircraftModel = aircraftModel;
+        } else {
+            throw new IllegalArgumentException("aircraft model can't be empty string");
+        }
     }
 
     public void setPassengerCapacity(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
+        if (passengerCapacity >= 0) {
+            this.passengerCapacity = passengerCapacity;
+        } else {
+            throw new IllegalArgumentException("passengerCapacity can't be negative");
+        }
     }
 
     public void setCarryingCapacity(int carryingCapacity) {
-        this.carryingCapacity = carryingCapacity;
+        if (carryingCapacity >= 0) {
+            this.carryingCapacity = carryingCapacity;
+        } else {
+            throw new IllegalArgumentException("carryingCapacity can't be negative");
+        }
     }
 
     public void setFlightRange(int flightRange) {
-        this.flightRange = flightRange;
+        if (flightRange >= 0) {
+            this.flightRange = flightRange;
+        } else {
+            throw new IllegalArgumentException("flightRange can't be negative");
+        }
     }
 
     public void setFuelConsumption(int fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
+        if (fuelConsumption >= 0) {
+            this.fuelConsumption = fuelConsumption;
+        } else {
+            throw new IllegalArgumentException("fuelConsumption can't be negative");
+        }
     }
 
     @Override
