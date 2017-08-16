@@ -42,6 +42,11 @@
         <h1><fmt:message key="airline.fleet"/></h1>
     </div>
     <br/>
+    <form name="showAirlineDetailsForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SHOW_AIRLINE_DETAILS">
+        <input class="button" type="submit" value="Airline details">
+    </form>
+    <br/>
     <form name="sortedByFuelConsumptionForm" action="controller" method="post">
         <input type="hidden" name="command" value="SHOW_SORTED_BY_FUEL_CONSUMPTION">
         <input class="button" type="submit" value="Sort by fuel consumption">
