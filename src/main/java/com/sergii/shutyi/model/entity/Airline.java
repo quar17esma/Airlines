@@ -6,6 +6,7 @@ import com.sergii.shutyi.model.util.SortPlane;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Represents Airline entity.
@@ -15,6 +16,8 @@ public class Airline {
      * List of Aircraft of the Airline.
      */
     private List<Aircraft> aircraftList;
+
+//    private String name;
 
     /**
      * Passenger capacity of the Airline
@@ -29,11 +32,30 @@ public class Airline {
     public Airline() {
         PlaneDAO planeDAO = new PlaneDAO();
         this.aircraftList = planeDAO.findAll();
+        this.passengerCapacity = calculatePassengerCapacity(this.aircraftList);
+        this.carryingCapacity = calculateCarryingCapacity(this.aircraftList);
+//        AirlineDAO airlineDAO = new AirlineDAO();
+//        this.name = airlineDAO.name;
+    }
+
+    public int calculatePassengerCapacity(List<Aircraft> aircraftList) {
+        int passengerCapacity = 0;
+        for (Aircraft aircraft:aircraftList) {
+            passengerCapacity += aircraft.getPassengerCapacity();
+        }
+        return passengerCapacity;
+    }
+
+    public int calculateCarryingCapacity(List<Aircraft> aircraftList) {
+        int carryingCapacity = 0;
+        for (Aircraft aircraft:aircraftList) {
+            carryingCapacity += aircraft.getCarryingCapacity();
+        }
+        return carryingCapacity;
     }
 
     /**
      * Method sorts list of aircraft by flight range in ascend order
-     * @param aircraftList list of aircraft to sort
      */
     public List<Aircraft> sortByFuelConsumption(){
         Collections.sort(aircraftList, SortPlane.SORT_BY_FUEL_CONSUMPTION);
@@ -42,7 +64,6 @@ public class Airline {
 
     /**
      * Method sorts list of aircraft by flight range in ascend order
-     * @param aircraftList list of aircraft to sort
      */
     public List<Aircraft> sortByFlightRange(){
         Collections.sort(aircraftList, SortPlane.SORT_BY_FLIGHT_RANGE);
@@ -99,4 +120,16 @@ public class Airline {
     public int getCarryingCapacity() {
         return carryingCapacity;
     }
+
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        if (!Objects.requireNonNull(name).isEmpty()) {
+//            this.name = name;
+//        } else {
+//            throw new IllegalArgumentException("airline name can't be empty");
+//        }
+//    }
 }
