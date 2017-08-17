@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PlaneDAO {
 
-    public static final String SQL_SELECT_ALL_PLANES = "SELECT * FROM planes";
+    private static final String SQL_SELECT_ALL_PLANES = "SELECT * FROM planes";
 
     public List<Aircraft> findAll() {
         List<Aircraft> planes = new ArrayList<>();

@@ -1,12 +1,8 @@
 package com.sergii.shutyi.model.entity.airline;
 
-import com.sergii.shutyi.dao.airline.AirlineDAO;
-import com.sergii.shutyi.dao.plane.PlaneDAO;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
-import com.sergii.shutyi.model.util.calculator.AircraftCalculator;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
