@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model.util.calulator;
+package com.sergii.shutyi.model.util.calculator;
 
 import com.sergii.shutyi.model.entity.Aircraft;
 

@@ -2,7 +2,7 @@ package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.dao.AirlineDAO;
 import com.sergii.shutyi.dao.PlaneDAO;
-import com.sergii.shutyi.model.util.calulator.AircraftCalculator;
+import com.sergii.shutyi.model.util.calculator.AircraftCalculator;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
