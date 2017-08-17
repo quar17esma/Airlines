@@ -1,7 +1,7 @@
 package com.sergii.shutyi.dao;
 
-import com.sergii.shutyi.model.entity.Aircraft;
-import com.sergii.shutyi.model.entity.plane.AbstractPlane;
+import com.sergii.shutyi.dao.plane.PlaneDAO;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 import org.junit.Ignore;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model.entity;
+package com.sergii.shutyi.model.entity.aircraft;
 
 public interface Aircraft {
     int getId();

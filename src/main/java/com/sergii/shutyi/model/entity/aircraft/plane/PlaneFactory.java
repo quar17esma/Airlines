@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model.entity.plane;
+package com.sergii.shutyi.model.entity.aircraft.plane;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

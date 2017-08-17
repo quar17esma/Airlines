@@ -1,6 +1,6 @@
 package com.sergii.shutyi.model.util.sorter;
 
-import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.util.Collections;
 import java.util.List;
