@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 public class LabelManager {
     public static final ResourceBundle resourceBundle =
-            ResourceBundle.getBundle("Labels", new Locale("en_US"));
+            ResourceBundle.getBundle("Labels", new Locale("en", "US"));
 
     private LabelManager(){}
 

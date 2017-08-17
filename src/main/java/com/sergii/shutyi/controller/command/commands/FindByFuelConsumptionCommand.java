@@ -2,7 +2,9 @@ package com.sergii.shutyi.controller.command.commands;
 
 import com.sergii.shutyi.controller.Controller;
 import com.sergii.shutyi.controller.command.ActionCommand;
+import com.sergii.shutyi.controller.exceptions.IllegalFuelConsumptionRange;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
+import com.sergii.shutyi.controller.manager.LabelManager;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 import com.sergii.shutyi.model.util.finder.AircraftFinder;
 
@@ -19,7 +21,12 @@ public class FindByFuelConsumptionCommand implements ActionCommand {
         List<Aircraft> planes = Controller.getModel().getAirline().getAircraftList();
 
         AircraftFinder finder = new AircraftFinder();
-        planes = finder.findByFuelConsumptionRange(planes, minFuelConsumption, maxFuelConsumption);
+        try {
+            planes = finder.findByFuelConsumptionRange(planes, minFuelConsumption, maxFuelConsumption);
+        } catch (IllegalFuelConsumptionRange e) {
+            String s = LabelManager.getProperty("wrong.fuel.consumption.range");
+            request.setAttribute("wrongFuelConsumptionRange", s);
+        }
         request.setAttribute("planes", planes);
 
         page = ConfigurationManager.getProperty("path.page.show.airline.fleet");

@@ -32,6 +32,9 @@
         .header {
             font-size: x-large;
         }
+        .warning {
+            color: red;
+        }
     </style>
 
     <title><fmt:message key="show.airline"/></title>
@@ -65,6 +68,9 @@
         Max consumption:
         <input type="number" name="max_fuel_consumption" min="0" max="3000" step="50" value="3000">
         <input class="button" type="submit" value="Find by flight range">
+
+        <div class="warning"><c:out value="${wrongFuelConsumptionRange}"/></div>
+
     </form>
     <br/>
 
@@ -79,7 +85,7 @@
             <c:out value="${plane.aircraftModel}"/>
         </div>
         <div class="field">
-            <label><fmt:message key="plane.passanger.capacity"/></label>
+            <label><fmt:message key="plane.passenger.capacity"/></label>
             <c:out value="${plane.passengerCapacity}"/>
         </div>
         <div class="field">
