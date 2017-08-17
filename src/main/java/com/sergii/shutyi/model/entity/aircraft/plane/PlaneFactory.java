@@ -14,11 +14,15 @@ public class PlaneFactory {
         }
 
         if (type.equalsIgnoreCase("cargo")) {
-            plane = new CargoPlane();
-            plane.setCarryingCapacity(resultSet.getInt("carrying_capacity"));
+            CargoPlane cargoPlane = new CargoPlane();
+            cargoPlane.setCarryingCapacity(resultSet.getInt("carrying_capacity"));
+            cargoPlane.setCargoCompartmentVolume(resultSet.getInt("cargo_compartment_volume"));
+            plane = cargoPlane;
         } else if (type.equalsIgnoreCase("passenger")) {
-            plane = new PassengerPlane();
-            plane.setPassengerCapacity(resultSet.getInt("passenger_capacity"));
+            PassengerPlane passengerPlane = new PassengerPlane();
+            passengerPlane.setPassengerCapacity(resultSet.getInt("passenger_capacity"));
+            passengerPlane.setPassengerCompartmentVolume(resultSet.getInt("passenger_compartment_volume"));
+            plane = passengerPlane;
         } else {
             throw new SQLException("Unsupported plane type");
         }

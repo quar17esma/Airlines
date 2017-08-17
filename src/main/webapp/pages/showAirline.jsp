@@ -67,7 +67,7 @@
         <input type="number" name="min_fuel_consumption" min="0" max="3000" step="50" value="0">
         Max consumption:
         <input type="number" name="max_fuel_consumption" min="0" max="3000" step="50" value="3000">
-        <input class="button" type="submit" value="Find by flight range">
+        <input class="button" type="submit" value="Find by fuel consumption">
 
         <div class="warning"><c:out value="${wrongFuelConsumptionRange}"/></div>
 
