@@ -54,23 +54,13 @@ public class Airline {
      */
     private int carryingCapacity;
 
-    public Airline() {
-        //build by pattern
-        PlaneDAO planeDAO = new PlaneDAO();
-        this.aircraftList = planeDAO.findAll();
-        AircraftCalculator aircraftCalculator = new AircraftCalculator();
-        this.passengerCapacity = aircraftCalculator.calculatePassengerCapacity(this.aircraftList);
-        this.carryingCapacity = aircraftCalculator.calculateCarryingCapacity(this.aircraftList);
-        AirlineDAO airlineDAO = new AirlineDAO();
-        airlineDAO.setAirlineParameters(this);
-    }
 
     //getter and setter
     public List<Aircraft> getAircraftList() {
         return aircraftList;
     }
 
-    public void setAircraftList(ArrayList<Aircraft> aircraftList) {
+    public void setAircraftList(List<Aircraft> aircraftList) {
         this.aircraftList = aircraftList;
     }
 
@@ -78,8 +68,16 @@ public class Airline {
         return passengerCapacity;
     }
 
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
     public int getCarryingCapacity() {
         return carryingCapacity;
+    }
+
+    public void setCarryingCapacity(int carryingCapacity) {
+        this.carryingCapacity = carryingCapacity;
     }
 
     public String getName() {
