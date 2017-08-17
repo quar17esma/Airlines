@@ -2,7 +2,7 @@ package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.dao.AirlineDAO;
 import com.sergii.shutyi.dao.PlaneDAO;
-import com.sergii.shutyi.model.util.AirlineUtil;
+import com.sergii.shutyi.model.util.calulator.AircraftCalculator;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -57,9 +57,9 @@ public class Airline {
         //build by pattern
         PlaneDAO planeDAO = new PlaneDAO();
         this.aircraftList = planeDAO.findAll();
-        AirlineUtil airlineUtil = new AirlineUtil();
-        this.passengerCapacity = airlineUtil.calculatePassengerCapacity(this.aircraftList);
-        this.carryingCapacity = airlineUtil.calculateCarryingCapacity(this.aircraftList);
+        AircraftCalculator aircraftCalculator = new AircraftCalculator();
+        this.passengerCapacity = aircraftCalculator.calculatePassengerCapacity(this.aircraftList);
+        this.carryingCapacity = aircraftCalculator.calculateCarryingCapacity(this.aircraftList);
         AirlineDAO airlineDAO = new AirlineDAO();
         airlineDAO.setAirlineParameters(this);
     }

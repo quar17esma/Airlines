@@ -4,8 +4,7 @@ import com.sergii.shutyi.controller.Controller;
 import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.model.entity.Aircraft;
-import com.sergii.shutyi.model.util.AircraftFinder;
-import com.sergii.shutyi.model.util.AirlineUtil;
+import com.sergii.shutyi.model.util.finder.AircraftFinder;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
