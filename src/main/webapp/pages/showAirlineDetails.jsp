@@ -43,7 +43,7 @@
 </div>
 <br/>
 <form name="showAirlineForm" action="controller" method="post">
-    <input type="hidden" name="command" value="SHOW_AIRLINE">
+    <input type="hidden" name="command" value="SHOW_FLEET">
     <input class="button" type="submit" value="Airline fleet">
 </form>
 <br/>

@@ -47,19 +47,19 @@
         <input class="button" type="submit" value="Airline details">
     </form>
     <br/>
-    <form name="sortedByFuelConsumptionForm" action="controller" method="post">
-        <input type="hidden" name="command" value="SHOW_SORTED_BY_FUEL_CONSUMPTION">
+    <form name="sortByFuelConsumptionForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SORT_BY_FUEL_CONSUMPTION">
         <input class="button" type="submit" value="Sort by fuel consumption">
     </form>
     <br/>
-    <form name="sortedByFlightRangeForm" action="controller" method="post">
-        <input type="hidden" name="command" value="SHOW_SORTED_BY_FLIGHT_RANGE">
+    <form name="sortByFlightRangeForm" action="controller" method="post">
+        <input type="hidden" name="command" value="SORT_BY_FLIGHT_RANGE">
         <input class="button" type="submit" value="Sort by flight range">
     </form>
     <br/>
 
     <form name="findByFuelConsumptionForm" action="controller" method="post">
-        <input type="hidden" name="command" value="SHOW_FIND_BY_FUEL_CONSUMPTION">
+        <input type="hidden" name="command" value="FIND_BY_FUEL_CONSUMPTION">
         Min consumption:
         <input type="number" name="min_fuel_consumption" min="0" max="3000" step="50" value="0">
         Max consumption:

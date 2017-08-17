@@ -2,6 +2,7 @@ package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.dao.AirlineDAO;
 import com.sergii.shutyi.dao.PlaneDAO;
+import com.sergii.shutyi.model.util.AirlineUtil;
 import com.sergii.shutyi.model.util.SortPlane;
 
 import java.time.LocalDate;
@@ -19,14 +20,29 @@ public class Airline {
      */
     private List<Aircraft> aircraftList;
 
+    /**
+     * Name of the company
+     */
     private String name;
 
+    /**
+     * Headquarters of the airline
+     */
     private String headquarters;
 
+    /**
+     * Hubs of the airline
+     */
     private String hubs;
 
+    /**
+     * Parent company of the airline
+     */
     private String parentCompany;
 
+    /**
+     * Foundation date of the airline
+     */
     private LocalDate founded;
 
     /**
@@ -40,78 +56,14 @@ public class Airline {
     private int carryingCapacity;
 
     public Airline() {
+        //build by pattern
         PlaneDAO planeDAO = new PlaneDAO();
         this.aircraftList = planeDAO.findAll();
-        this.passengerCapacity = calculatePassengerCapacity(this.aircraftList);
-        this.carryingCapacity = calculateCarryingCapacity(this.aircraftList);
+        AirlineUtil airlineUtil = new AirlineUtil();
+        this.passengerCapacity = airlineUtil.calculatePassengerCapacity(this.aircraftList);
+        this.carryingCapacity = airlineUtil.calculateCarryingCapacity(this.aircraftList);
         AirlineDAO airlineDAO = new AirlineDAO();
         airlineDAO.setAirlineParameters(this);
-    }
-
-    public int calculatePassengerCapacity(List<Aircraft> aircraftList) {
-        int passengerCapacity = 0;
-        for (Aircraft aircraft:aircraftList) {
-            passengerCapacity += aircraft.getPassengerCapacity();
-        }
-        return passengerCapacity;
-    }
-
-    public int calculateCarryingCapacity(List<Aircraft> aircraftList) {
-        int carryingCapacity = 0;
-        for (Aircraft aircraft:aircraftList) {
-            carryingCapacity += aircraft.getCarryingCapacity();
-        }
-        return carryingCapacity;
-    }
-
-    /**
-     * Method sorts list of aircraft by flight range in ascend order
-     */
-    public List<Aircraft> sortByFuelConsumption(){
-        Collections.sort(aircraftList, SortPlane.SORT_BY_FUEL_CONSUMPTION);
-        return aircraftList;
-    }
-
-    /**
-     * Method sorts list of aircraft by flight range in ascend order
-     */
-    public List<Aircraft> sortByFlightRange(){
-        Collections.sort(aircraftList, SortPlane.SORT_BY_FLIGHT_RANGE);
-        return aircraftList;
-    }
-
-    /**
-     * Method finds Aircraft with fuel consumption in range.
-     * @param minFuelConsumption minimal fuel consumption
-     * @param maxFuelConsumption maximal fuel consumption
-     * @return list of aircraft with fuel consumption in range
-     */
-    public List<Aircraft> findByFuelConsumptionRange(int minFuelConsumption, int maxFuelConsumption){
-        List<Aircraft> aircraftInRangeList = new ArrayList<>();
-        for (Aircraft aircraft:aircraftList) {
-            if (isBetweenFuelConsumption(aircraft.getFuelConsumption(), minFuelConsumption, maxFuelConsumption)) {
-                aircraftInRangeList.add(aircraft);
-            }
-        }
-
-        if (aircraftInRangeList.isEmpty()) {
-            //Exception not found in range
-        }
-
-        return aircraftInRangeList;
-    }
-
-    private boolean isBetweenFuelConsumption(int actual, int min, int max) {
-        if (actual <= 0 || min < 0 || max <= 0) {
-            throw new IllegalArgumentException("Fuel consumption can not be negative or equals zero");
-        } else if (min > max) {
-            throw new IllegalArgumentException("min can not be greater than max");
-        } else {
-            if (actual > min && actual < max) {
-                return true;
-            }
-        }
-        return false;
     }
 
     //getter and setter

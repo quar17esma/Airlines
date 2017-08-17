@@ -5,7 +5,7 @@
 </head>
 <body>
 <jsp:forward page="/controller" >
-    <jsp:param name="command" value="SHOW_AIRLINE"/>
+    <jsp:param name="command" value="SHOW_FLEET"/>
 </jsp:forward>
 </body>
 </html>

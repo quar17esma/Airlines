@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Command to show all Planes of the Airline.
  */
-public class ShowAllCommand implements ActionCommand {
+public class ShowFleetCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
