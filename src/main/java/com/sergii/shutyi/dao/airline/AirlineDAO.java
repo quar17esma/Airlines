@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 
 public class AirlineDAO {
-    public static final String SQL_SELECT_ALL_AIRLINES = "SELECT * FROM airline";
+    private static final String SQL_SELECT_ALL_AIRLINES = "SELECT * FROM airline";
 
     public void setAirlineParameters(Airline airline) {
 
