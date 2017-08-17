@@ -37,7 +37,7 @@ public class AircraftCalculator {
         if (aircraftList.isEmpty()) {
             throw new IllegalArgumentException("aircraftList is empty");
         }
-        
+
         int carryingCapacity = 0;
         for (Aircraft aircraft:aircraftList) {
             carryingCapacity += aircraft.getCarryingCapacity();

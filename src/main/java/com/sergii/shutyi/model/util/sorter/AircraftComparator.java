@@ -4,6 +4,9 @@ import com.sergii.shutyi.model.entity.Aircraft;
 
 import java.util.Comparator;
 
+/**
+ * Class gives aircraft comparators by criteria
+ */
 public class AircraftComparator {
 
     public static Comparator<Aircraft> SORT_BY_FUEL_CONSUMPTION = new Comparator<Aircraft>() {
