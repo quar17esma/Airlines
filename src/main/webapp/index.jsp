@@ -1,5 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <title>Index</title>
+</head>
 <body>
-<h2>Hello World!</h2>
+<jsp:forward page="/controller" >
+    <jsp:param name="command" value="SHOW_AIRLINE"/>
+</jsp:forward>
 </body>
 </html>
