@@ -6,9 +6,9 @@ import com.sergii.shutyi.controller.command.commands.*;
  * Possible Commands.
  */
 public enum CommandEnum {
-    SHOW_AIRLINE {
+    SHOW_FLEET {
         {
-            this.command = new ShowAllCommand();
+            this.command = new ShowFleetCommand();
         }
     },
     SHOW_AIRLINE_DETAILS {
@@ -16,19 +16,19 @@ public enum CommandEnum {
             this.command = new ShowAirlineDetailsCommand();
         }
     },
-    SHOW_SORTED_BY_FUEL_CONSUMPTION {
+    SORT_BY_FUEL_CONSUMPTION {
         {
-            this.command = new ShowSortedByFuelConsumption();
+            this.command = new SortByFuelConsumptionCommand();
         }
     },
-    SHOW_SORTED_BY_FLIGHT_RANGE {
+    SORT_BY_FLIGHT_RANGE {
         {
-            this.command = new ShowSortedByFlightRange();
+            this.command = new SortByFlightRangeCommand();
         }
     },
-    SHOW_FIND_BY_FUEL_CONSUMPTION {
+    FIND_BY_FUEL_CONSUMPTION {
         {
-            this.command = new ShowFindByFuelConsumption();
+            this.command = new FindByFuelConsumptionCommand();
         }
     };
 

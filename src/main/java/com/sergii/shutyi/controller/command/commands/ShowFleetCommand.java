@@ -8,14 +8,15 @@ import com.sergii.shutyi.model.entity.Aircraft;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public class ShowFindByFuelConsumption implements ActionCommand {
+/**
+ * Command to show all Planes of the Airline.
+ */
+public class ShowFleetCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
 
-        int minFuelConsumption = Integer.parseInt(request.getParameter("min_fuel_consumption"));
-        int maxFuelConsumption = Integer.parseInt(request.getParameter("max_fuel_consumption"));
-        List<Aircraft> planes = Controller.getModel().getAirline().findByFuelConsumptionRange(minFuelConsumption, maxFuelConsumption);
+        List<Aircraft> planes = Controller.getModel().getAirline().getAircraftList();
         request.setAttribute("planes", planes);
 
         page = ConfigurationManager.getProperty("path.page.show.airline.fleet");

@@ -1,10 +1,13 @@
-package com.sergii.shutyi.model.util;
+package com.sergii.shutyi.model.util.sorter;
 
 import com.sergii.shutyi.model.entity.Aircraft;
 
 import java.util.Comparator;
 
-public class SortPlane {
+/**
+ * Class gives aircraft comparators by criteria
+ */
+public class AircraftComparator {
 
     public static Comparator<Aircraft> SORT_BY_FUEL_CONSUMPTION = new Comparator<Aircraft>() {
         @Override
