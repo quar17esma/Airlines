@@ -5,6 +5,9 @@ import com.sergii.shutyi.model.entity.Aircraft;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Class sorts aircraft list by criteria
+ */
 public class AircraftSorter {
 
     /**

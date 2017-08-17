@@ -4,6 +4,7 @@ import com.sergii.shutyi.controller.Controller;
 import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.model.util.AircraftFinder;
 import com.sergii.shutyi.model.util.AirlineUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,9 @@ public class FindByFuelConsumptionCommand implements ActionCommand {
         int minFuelConsumption = Integer.parseInt(request.getParameter("min_fuel_consumption"));
         int maxFuelConsumption = Integer.parseInt(request.getParameter("max_fuel_consumption"));
         List<Aircraft> planes = Controller.getModel().getAirline().getAircraftList();
-        AirlineUtil airlineUtil = new AirlineUtil();
-        planes = airlineUtil.findByFuelConsumptionRange(planes, minFuelConsumption, maxFuelConsumption);
+
+        AircraftFinder finder = new AircraftFinder();
+        planes = finder.findByFuelConsumptionRange(planes, minFuelConsumption, maxFuelConsumption);
         request.setAttribute("planes", planes);
 
         page = ConfigurationManager.getProperty("path.page.show.airline.fleet");
