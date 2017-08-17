@@ -7,6 +7,7 @@ import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.controller.manager.LabelManager;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 import com.sergii.shutyi.model.util.finder.AircraftFinder;
+import com.sergii.shutyi.model.util.finder.IAircraftFinder;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -20,7 +21,7 @@ public class FindByFuelConsumptionCommand implements ActionCommand {
         int maxFuelConsumption = Integer.parseInt(request.getParameter("max_fuel_consumption"));
         List<Aircraft> planes = Controller.getModel().getAirline().getAircraftList();
 
-        AircraftFinder finder = new AircraftFinder();
+        IAircraftFinder finder = new AircraftFinder();
         try {
             planes = finder.findByFuelConsumptionRange(planes, minFuelConsumption, maxFuelConsumption);
         } catch (IllegalFuelConsumptionRange e) {

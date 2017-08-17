@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model.util.calculator;
+package com.sergii.shutyi.model.util.aggregator;
 
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
@@ -8,13 +8,13 @@ import java.util.Objects;
 /**
  * Class calculates aggregated values for airline
  */
-public class AircraftCalculator {
+public class AircraftAggregator implements IAircraftAggregator {
     /**
      * Calculate passenger capacity of the aircraft list
      * @param aircraftList
      * @return sum of passenger capacity of all aircraft in list
      */
-    public int calculatePassengerCapacity(List<Aircraft> aircraftList) {
+    public int aggregatePassengerCapacity(List<Aircraft> aircraftList) {
         Objects.requireNonNull(aircraftList);
         if (aircraftList.isEmpty()) {
             throw new IllegalArgumentException("aircraftList is empty");
@@ -32,7 +32,7 @@ public class AircraftCalculator {
      * @param aircraftList
      * @return sum of carrying capacity of all aircraft in list
      */
-    public int calculateCarryingCapacity(List<Aircraft> aircraftList) {
+    public int aggregateCarryingCapacity(List<Aircraft> aircraftList) {
         Objects.requireNonNull(aircraftList);
         if (aircraftList.isEmpty()) {
             throw new IllegalArgumentException("aircraftList is empty");

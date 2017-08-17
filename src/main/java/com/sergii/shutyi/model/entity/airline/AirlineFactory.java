@@ -3,7 +3,8 @@ package com.sergii.shutyi.model.entity.airline;
 import com.sergii.shutyi.dao.airline.AirlineDAO;
 import com.sergii.shutyi.dao.plane.PlaneDAO;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
-import com.sergii.shutyi.model.util.calculator.AircraftCalculator;
+import com.sergii.shutyi.model.util.aggregator.AircraftAggregator;
+import com.sergii.shutyi.model.util.aggregator.IAircraftAggregator;
 
 import java.util.List;
 
@@ -16,10 +17,10 @@ public class AirlineFactory {
         List<Aircraft> aircraftList = planeDAO.findAll();
         airline.setAircraftList(aircraftList);
 
-        AircraftCalculator aircraftCalculator = new AircraftCalculator();
-        int passengerCapacity = aircraftCalculator.calculatePassengerCapacity(aircraftList);
+        IAircraftAggregator aircraftAggregator = new AircraftAggregator();
+        int passengerCapacity = aircraftAggregator.aggregatePassengerCapacity(aircraftList);
         airline.setPassengerCapacity(passengerCapacity);
-        int carryingCapacity = aircraftCalculator.calculateCarryingCapacity(aircraftList);
+        int carryingCapacity = aircraftAggregator.aggregateCarryingCapacity(aircraftList);
         airline.setCarryingCapacity(carryingCapacity);
 
         AirlineDAO airlineDAO = new AirlineDAO();

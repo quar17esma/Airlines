@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * Class sorts aircraft list by criteria
  */
-public class AircraftSorter {
+public class AircraftSorter implements IAircraftSorter {
 
     /**
      * Method sorts list of aircraft by fuel consumption in ascend order
