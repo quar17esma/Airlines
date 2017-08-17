@@ -4,7 +4,7 @@ import com.sergii.shutyi.model.entity.Aircraft;
 
 import java.util.Comparator;
 
-public class SortPlane {
+public class AircraftComparator {
 
     public static Comparator<Aircraft> SORT_BY_FUEL_CONSUMPTION = new Comparator<Aircraft>() {
         @Override

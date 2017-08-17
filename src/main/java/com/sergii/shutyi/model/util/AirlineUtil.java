@@ -24,22 +24,6 @@ public class AirlineUtil {
     }
 
     /**
-     * Method sorts list of aircraft by flight range in ascend order
-     */
-    public List<Aircraft> sortByFuelConsumption(List<Aircraft> aircraftList){
-        Collections.sort(aircraftList, SortPlane.SORT_BY_FUEL_CONSUMPTION);
-        return aircraftList;
-    }
-
-    /**
-     * Method sorts list of aircraft by flight range in ascend order
-     */
-    public List<Aircraft> sortByFlightRange(List<Aircraft> aircraftList){
-        Collections.sort(aircraftList, SortPlane.SORT_BY_FLIGHT_RANGE);
-        return aircraftList;
-    }
-
-    /**
      * Method finds Aircraft with fuel consumption in range.
      * @param minFuelConsumption minimal fuel consumption
      * @param maxFuelConsumption maximal fuel consumption

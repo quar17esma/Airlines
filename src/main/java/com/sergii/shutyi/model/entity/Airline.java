@@ -3,11 +3,9 @@ package com.sergii.shutyi.model.entity;
 import com.sergii.shutyi.dao.AirlineDAO;
 import com.sergii.shutyi.dao.PlaneDAO;
 import com.sergii.shutyi.model.util.AirlineUtil;
-import com.sergii.shutyi.model.util.SortPlane;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
