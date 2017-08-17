@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model.entity.plane;
+package com.sergii.shutyi.model.entity.aircraft.plane;
 
 public class CargoPlane extends AbstractPlane {
     private static final int PASSENGER_CAPACITY = 0;

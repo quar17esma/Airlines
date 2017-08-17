@@ -1,6 +1,6 @@
 package com.sergii.shutyi.model.util.finder;
 
-import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.util.ArrayList;
 import java.util.List;

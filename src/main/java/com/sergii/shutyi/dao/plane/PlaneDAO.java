@@ -1,7 +1,8 @@
-package com.sergii.shutyi.dao;
+package com.sergii.shutyi.dao.plane;
 
-import com.sergii.shutyi.model.entity.plane.PlaneFactory;
-import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.dao.ConnectorDB;
+import com.sergii.shutyi.model.entity.aircraft.plane.PlaneFactory;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.sql.*;
 import java.util.ArrayList;

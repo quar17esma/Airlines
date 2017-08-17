@@ -48,7 +48,7 @@
 </form>
 <br/>
 
-<jsp:useBean id="airline" scope="request" type="com.sergii.shutyi.model.entity.Airline"/>
+<jsp:useBean id="airline" scope="request" type="com.sergii.shutyi.model.entity.airline.Airline"/>
 
     <div class="field">
         <label><fmt:message key="airline.name"/></label>

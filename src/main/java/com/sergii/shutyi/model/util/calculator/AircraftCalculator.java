@@ -1,6 +1,6 @@
 package com.sergii.shutyi.model.util.calculator;
 
-import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.util.List;
 import java.util.Objects;

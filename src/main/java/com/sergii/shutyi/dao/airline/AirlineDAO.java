@@ -1,6 +1,7 @@
-package com.sergii.shutyi.dao;
+package com.sergii.shutyi.dao.airline;
 
-import com.sergii.shutyi.model.entity.Airline;
+import com.sergii.shutyi.dao.ConnectorDB;
+import com.sergii.shutyi.model.entity.airline.Airline;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,7 +15,7 @@ public class AirlineDAO {
     public void setAirlineParameters(Airline airline) {
 
         try (Connection connection = ConnectorDB.getConnection();
-                Statement statement = connection.createStatement()) {
+             Statement statement = connection.createStatement()) {
 
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_AIRLINES);
             if (resultSet.next()) {

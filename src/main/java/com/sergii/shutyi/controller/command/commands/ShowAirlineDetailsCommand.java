@@ -3,7 +3,7 @@ package com.sergii.shutyi.controller.command.commands;
 import com.sergii.shutyi.controller.Controller;
 import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
-import com.sergii.shutyi.model.entity.Airline;
+import com.sergii.shutyi.model.entity.airline.Airline;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,6 +1,6 @@
-package com.sergii.shutyi.model.entity.plane;
+package com.sergii.shutyi.model.entity.aircraft.plane;
 
-import com.sergii.shutyi.model.entity.Aircraft;
+import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.util.Objects;
 
