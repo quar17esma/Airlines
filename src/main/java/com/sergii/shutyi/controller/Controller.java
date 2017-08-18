@@ -49,6 +49,6 @@ public class Controller extends HttpServlet {
     }
 
     public static void setModel(Model model) {
-        Controller.model = model;
+        Controller.model = Objects.requireNonNull(model);
     }
 }

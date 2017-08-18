@@ -57,7 +57,7 @@ public class Airline {
     }
 
     public void setAircraftList(List<Aircraft> aircraftList) {
-        this.aircraftList = aircraftList;
+        this.aircraftList = Objects.requireNonNull(aircraftList);
     }
 
     public int getPassengerCapacity() {
@@ -93,7 +93,7 @@ public class Airline {
     }
 
     public void setHeadquarters(String headquarters) {
-        this.headquarters = headquarters;
+        this.headquarters = Objects.requireNonNull(headquarters);
     }
 
     public String getHubs() {
@@ -101,7 +101,7 @@ public class Airline {
     }
 
     public void setHubs(String hubs) {
-        this.hubs = hubs;
+        this.hubs = Objects.requireNonNull(hubs);
     }
 
     public String getParentCompany() {
@@ -109,7 +109,7 @@ public class Airline {
     }
 
     public void setParentCompany(String parentCompany) {
-        this.parentCompany = parentCompany;
+        this.parentCompany = Objects.requireNonNull(parentCompany);
     }
 
     public LocalDate getFounded() {
@@ -117,6 +117,6 @@ public class Airline {
     }
 
     public void setFounded(LocalDate founded) {
-        this.founded = founded;
+        this.founded = Objects.requireNonNull(founded);
     }
 }
