@@ -2,6 +2,7 @@ package com.sergii.shutyi.controller;
 
 import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.command.ActionFactory;
+import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.model.Model;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 @WebServlet(name = "controller", urlPatterns = "/controller", loadOnStartup = 1)
 public class Controller extends HttpServlet {
@@ -35,14 +37,11 @@ public class Controller extends HttpServlet {
 
         page = command.execute(request);
 
-        if (page != null) {
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-            dispatcher.forward(request, response);
-        } else {
-//            page = ConfigurationManager.getProperty("path.page.index");
-//            request.getSession().setAttribute("nullPage", LabelManager.getProperty("message.null.page"));
-//            response.sendRedirect(request.getContextPath() + page);
-        }
+        Objects.requireNonNull(page);
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+        dispatcher.forward(request, response);
+
     }
 
     public static Model getModel() {

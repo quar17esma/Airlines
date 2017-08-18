@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * Class finds aircraft depends on criteria
  */
-public class AircraftFinder {
+public class AircraftFinder implements IAircraftFinder {
     /**
      * Method finds all aircraft with fuel consumption in range.
      *

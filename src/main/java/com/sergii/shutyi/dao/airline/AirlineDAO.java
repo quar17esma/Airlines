@@ -9,10 +9,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-public class AirlineDAO {
+public class AirlineDAO implements IAirlineDAO {
     private static final String SQL_SELECT_ALL_AIRLINES = "SELECT * FROM airline";
 
-    public void setAirlineParameters(Airline airline) {
+    public Airline getFirstAirline() {
+        Airline airline = new Airline();
 
         try (Connection connection = ConnectorDB.getConnection();
              Statement statement = connection.createStatement()) {
@@ -28,5 +29,6 @@ public class AirlineDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return airline;
     }
 }

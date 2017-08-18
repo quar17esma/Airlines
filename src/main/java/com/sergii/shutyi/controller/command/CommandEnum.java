@@ -1,6 +1,9 @@
 package com.sergii.shutyi.controller.command;
 
 import com.sergii.shutyi.controller.command.commands.*;
+import com.sergii.shutyi.controller.command.commands.find.FindByFuelConsumptionCommand;
+import com.sergii.shutyi.controller.command.commands.sort.SortByFlightRangeCommand;
+import com.sergii.shutyi.controller.command.commands.sort.SortByFuelConsumptionCommand;
 
 /**
  * Possible Commands.

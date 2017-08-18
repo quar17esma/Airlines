@@ -1,5 +1,6 @@
 package com.sergii.shutyi.dao;
 
+import com.sergii.shutyi.dao.plane.IPlaneDao;
 import com.sergii.shutyi.dao.plane.PlaneDAO;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 import org.junit.Ignore;
@@ -11,8 +12,8 @@ public class PlaneDAOTest {
     @Ignore
     @Test
     public void findAll() throws Exception {
-        PlaneDAO planeDAO = new PlaneDAO();
-        List<Aircraft> planes = planeDAO.findAll();
+        IPlaneDao planeDAO = new PlaneDAO();
+        List<Aircraft> planes = planeDAO.getAllPlanes();
         System.out.println(planes);
     }
 
