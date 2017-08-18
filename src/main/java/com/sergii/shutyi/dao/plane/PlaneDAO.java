@@ -1,18 +1,18 @@
 package com.sergii.shutyi.dao.plane;
 
 import com.sergii.shutyi.dao.ConnectorDB;
-import com.sergii.shutyi.model.entity.aircraft.plane.PlaneFactory;
+import com.sergii.shutyi.model.entity.aircraft.plane.factory.PlaneFactory;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaneDAO {
+public class PlaneDAO implements IPlaneDao {
 
     private static final String SQL_SELECT_ALL_PLANES = "SELECT * FROM planes";
 
-    public List<Aircraft> findAll() {
+    public List<Aircraft> getAllPlanes() {
         List<Aircraft> planes = new ArrayList<>();
 
         try (Connection connection = ConnectorDB.getConnection();

@@ -1,10 +1,14 @@
-package com.sergii.shutyi.model.entity.aircraft.plane;
+package com.sergii.shutyi.model.entity.aircraft.plane.factory;
+
+import com.sergii.shutyi.model.entity.aircraft.plane.AbstractPlane;
+import com.sergii.shutyi.model.entity.aircraft.plane.CargoPlane;
+import com.sergii.shutyi.model.entity.aircraft.plane.PassengerPlane;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class PlaneFactory {
+public class PlaneFactory extends AbstractPlaneFactory {
     public AbstractPlane createPlane(ResultSet resultSet) throws SQLException {
         AbstractPlane plane = null;
 

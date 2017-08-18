@@ -1,20 +1,26 @@
-package com.sergii.shutyi.model.entity.airline;
+package com.sergii.shutyi.model.entity.airline.factory;
 
 import com.sergii.shutyi.dao.airline.AirlineDAO;
+import com.sergii.shutyi.dao.airline.IAirlineDAO;
+import com.sergii.shutyi.dao.plane.IPlaneDao;
 import com.sergii.shutyi.dao.plane.PlaneDAO;
 import com.sergii.shutyi.model.entity.aircraft.Aircraft;
+import com.sergii.shutyi.model.entity.airline.Airline;
 import com.sergii.shutyi.model.util.aggregator.AircraftAggregator;
 import com.sergii.shutyi.model.util.aggregator.IAircraftAggregator;
 
 import java.util.List;
 
-public class AirlineFactory {
+public class AirlineFactory extends AbstractAirlineFactory {
 
-    public static Airline createAirline() {
-        Airline airline = new Airline();
+    public Airline createAirline() {
+        Airline airline;
 
-        PlaneDAO planeDAO = new PlaneDAO();
-        List<Aircraft> aircraftList = planeDAO.findAll();
+        IAirlineDAO airlineDAO = new AirlineDAO();
+        airline = airlineDAO.getFirstAirline();
+
+        IPlaneDao planeDAO = new PlaneDAO();
+        List<Aircraft> aircraftList = planeDAO.getAllPlanes();
         airline.setAircraftList(aircraftList);
 
         IAircraftAggregator aircraftAggregator = new AircraftAggregator();
@@ -22,9 +28,6 @@ public class AirlineFactory {
         airline.setPassengerCapacity(passengerCapacity);
         int carryingCapacity = aircraftAggregator.aggregateCarryingCapacity(aircraftList);
         airline.setCarryingCapacity(carryingCapacity);
-
-        AirlineDAO airlineDAO = new AirlineDAO();
-        airlineDAO.setAirlineParameters(airline);
 
         return airline;
     }
